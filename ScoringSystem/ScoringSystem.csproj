@@ -52,17 +52,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoreConfiguration.cs" />
     <Compile Include="ScoreConfigurationItem.cs" />
-    <Compile Include="ScoreCountSortDecorator.cs" />
     <Compile Include="ScoreDeterminant.cs" />
-    <Compile Include="ScoreFactorAttribute.cs" />
     <Compile Include="ScoreItem.cs" />
-    <Compile Include="ScoreSortDecorator.cs" />
     <Compile Include="ScoreVector.cs" />
-    <Compile Include="ScoreVectorFactory.cs" />
-    <Compile Include="ScoreVectorNoSIMD.cs" />
     <Compile Include="ScoreVectorSIMD.cs" />
-    <Compile Include="ScoringExtensioncs.cs" />
     <Compile Include="SynchronousScoreDeterminant.cs" />
+    <Compile Include="SynchronousScoreSIMDDeterminant.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

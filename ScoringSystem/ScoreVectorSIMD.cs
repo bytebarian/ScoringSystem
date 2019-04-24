@@ -1,10 +1,20 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 
 namespace ScoringSystem
 {
-    public class ScoreVectorSIMD : ScoreVector
+    public struct ScoreVectorSIMD
     {
         private static readonly int simdLenght = Vector<ushort>.Count;
+        private ushort[] _values;
+
+        public int Length
+        {
+            get
+            {
+                return _values.Length;
+            }
+        }
 
         public ScoreVectorSIMD(ushort[] values)
         {

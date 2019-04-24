@@ -1,8 +1,10 @@
-﻿namespace ScoringSystem
+﻿using System;
+
+namespace ScoringSystem
 {
-    public abstract class ScoreVector
+    public struct ScoreVector
     {
-        protected ushort[] _values;
+        private ushort[] _values;
 
         public int Length
         {
@@ -12,14 +14,81 @@
             }
         }
 
-        public int Sum()
+        public ScoreVector(ushort[] values)
         {
-            var sum = 0;
-            for (var i = 0; i < _values.Length; i++)
+            this._values = values;
+        }
+
+        public ScoreVector Max(ScoreVector max)
+        {
+            var result = new ushort[Length];
+
+            for (var i = 0; i < Length; ++i)
             {
-                sum += _values[i];
+                result[i] = Math.Max(_values[i], max._values[i]);
             }
-            return sum;
+
+            return new ScoreVector(result);
+        }
+
+        public ScoreVector Min(ScoreVector min)
+        {
+            var result = new ushort[Length];
+
+            for (var i = 0; i < Length; ++i)
+            {
+                result[i] = Math.Min(_values[i], min._values[i]);
+            }
+
+            return new ScoreVector(result);
+        }
+
+        public static ScoreVector operator +(ScoreVector vleft, ScoreVector vright)
+        {
+            var result = new ushort[vleft.Length];
+
+            for (var i = 0; i < vleft.Length; ++i)
+            {
+                result[i] = (ushort)(vleft._values[i] + vright._values[i]);
+            }
+
+            return new ScoreVector(result);
+        }
+
+        public static ScoreVector operator -(ScoreVector vleft, ScoreVector vright)
+        {
+            var result = new ushort[vleft.Length];
+
+            for (var i = 0; i < vleft.Length; ++i)
+            {
+                result[i] = (ushort)(vleft._values[i] - vright._values[i]);
+            }
+
+            return new ScoreVector(result);
+        }
+
+        public static ScoreVector operator *(ScoreVector vleft, ScoreVector vright)
+        {
+            var result = new ushort[vleft.Length];
+
+            for (var i = 0; i < vleft.Length; ++i)
+            {
+                result[i] = (ushort)(vleft._values[i] * vright._values[i]);
+            }
+
+            return new ScoreVector(result);
+        }
+
+        public static ScoreVector operator /(ScoreVector vleft, ScoreVector vright)
+        {
+            var result = new ushort[vleft.Length];
+
+            for (var i = 0; i < vleft.Length; ++i)
+            {
+                result[i] = (ushort)(vleft._values[i] / vright._values[i]);
+            }
+
+            return new ScoreVector(result);
         }
     }
 }

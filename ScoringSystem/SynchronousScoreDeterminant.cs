@@ -8,17 +8,14 @@ namespace ScoringSystem
     {
         public SynchronousScoreDeterminant(ScoreConfiguration configuration) : base(configuration) { }
 
-        public override List<ScoreItem> GetScoring(List<object> items, ScoreVector maxFactorVector, ScoreVector minFactorVector)
+        public override void GetScoring(List<ScoreItem> items)
         {
-            foreach(var item in items)
-            {
-                var scoreFactors = item.GetType().GetProperties()
-                    .Where(p => Attribute.IsDefined(p, typeof(ScoreFactorAttribute)) && p.GetValue(item).IsNumber())
-                    .Select(pi => (decimal)pi.GetValue(item)).ToArray();
+            
+        }
 
-            }
+        private void GetMinMaxVector(List<ScoreItem> items)
+        {
 
-            throw new System.NotImplementedException();
         }
     }
 }
