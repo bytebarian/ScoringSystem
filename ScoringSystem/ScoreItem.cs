@@ -2,13 +2,14 @@
 {
     public class ScoreItem
     {
-        public int Score { get; private set; }
+        public int Score { get; set; }
         public object Item { get; private set; }
+        public ScoreVector Factories { get; private set; }
 
-        public ScoreItem(int score, object item)
+        public ScoreItem(object item, ScoreVector factories)
         {
-            Score = score;
             Item = item;
+            Factories = factories;
         }
     }
 }
