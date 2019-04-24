@@ -56,8 +56,11 @@
     <Compile Include="ScoreFactorAttribute.cs" />
     <Compile Include="ScoreItem.cs" />
     <Compile Include="ScoreVector.cs" />
+    <Compile Include="ScoreVectorFactory.cs" />
     <Compile Include="ScoreVectorNoSIMD.cs" />
     <Compile Include="ScoreVectorSIMD.cs" />
+    <Compile Include="ScoringExtensioncs.cs" />
+    <Compile Include="SynchronousScoreDeterminant.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
