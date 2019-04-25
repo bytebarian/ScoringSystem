@@ -3,6 +3,6 @@
     public class ScoreConfigurationItem
     {
         public string Key { get; set; }
-        public byte Weight { get; set; }
+        public short Weight { get; set; }
     }
 }

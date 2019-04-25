@@ -5,7 +5,7 @@ namespace ScoringSystem
 {
     public class ScoreConfiguration
     {
-        private readonly Dictionary<string, byte> _dict;
+        private readonly Dictionary<string, short> _dict;
 
         public int Count
         {
@@ -20,7 +20,7 @@ namespace ScoringSystem
             _dict = items.ToDictionary(x => x.Key, x => x.Weight);
         }
 
-        public byte GetWeight(string key)
+        public short GetWeight(string key)
         {
             if (!_dict.ContainsKey(key))
             {
@@ -35,9 +35,9 @@ namespace ScoringSystem
             return _dict.Keys.ToList();
         }
 
-        public List<byte> GetWeights()
+        public short[] GetWeights()
         {
-            return _dict.Values.ToList();
+            return _dict.Values.ToArray();
         }
     }
 }
