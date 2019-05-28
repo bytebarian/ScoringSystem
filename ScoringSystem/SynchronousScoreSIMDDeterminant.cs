@@ -22,16 +22,6 @@ namespace ScoringSystem
             }
         }
 
-        protected int SumVector(short[] scoringVector)
-        {
-            var sum = 0;
-            for(var i = 0; i < scoringVector.Length; i++)
-            {
-                sum += scoringVector[i];
-            }
-            return sum;
-        }
-
         protected void GetMinMaxVector(List<ScoreItem> items)
         {
             var simdLenght = Vector<float>.Count;

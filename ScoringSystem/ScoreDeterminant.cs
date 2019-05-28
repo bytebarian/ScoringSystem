@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace ScoringSystem
 {
@@ -36,5 +34,15 @@ namespace ScoringSystem
         }
 
         public abstract void GetScoring(List<ScoreItem> items);
+
+        protected int SumVector(short[] scoringVector)
+        {
+            var sum = 0;
+            for (var i = 0; i < scoringVector.Length; i++)
+            {
+                sum += scoringVector[i];
+            }
+            return sum;
+        }
     }
 }
